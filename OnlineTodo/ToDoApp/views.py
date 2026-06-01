@@ -5,6 +5,7 @@ from .models import Todoapp
 def todo_list(request):
     all_data = {'todo_list':Todoapp.objects.all()}
     return render(request,'ToDoApp/todo_list.html',all_data)
+
 def insert_todo(request:HttpRequest):
     todo=Todoapp(content=request.POST['content'])
     todo.save()
